@@ -1,3 +1,7 @@
+span, p, h4, button {
+    overflow: hidden;
+}
+
 body {
    background-color: #4444a6;
    font-family: W95FA;
@@ -10,7 +14,6 @@ body {
 
 header {
    background-color: #eb0faa;
-   width: 1215px;
    padding: 0.2rem; /* added horizontal padding */
    font-family: W95FA;
    color: #fffbde;
@@ -26,7 +29,8 @@ header {
 
 .wrapper,
 header {
-   width: 85vw;
+   max-width: 1280px;
+   max-heigt: 720px;
    height: auto;
    margin: 1.5rem auto;
    padding: 1rem; /* optional: some breathing room */
@@ -42,6 +46,7 @@ header {
    width: auto; /* keeps aspect ratio */
    padding-right: 0rem;
 }
+
 nav a {
    padding: 0rem 1rem;
 }
@@ -77,6 +82,7 @@ nav a {
 
 .aboutme {
    display: grid;
+   gap: 10px;
 }
 
 .rubrik {
@@ -127,7 +133,7 @@ button {
    font-family: W95FA;
    background-color: #eb0faa;
    color: #fffbde;
-   font-size: 2rem;
+   font-size: 1.2rem;
    padding-top: 0.5rem;
    padding-bottom: 0.5rem;
    padding-left: 1rem;
@@ -186,6 +192,9 @@ button:active {
 
    box-sizing: border-box;
 }
+
+
+
 .educationrubrik {
    color: #eb0faa;
    font-size: 1.6rem;
@@ -208,12 +217,25 @@ main {
    display: grid;
 }
 
+.buttons {
+    padding: 20px;
+    display: flex;
+    margin-top: 1vw;
+    justify-content: space-between;
+    grid-area: 1 / 1 / 1 / 2;
+}
+
+
 .left {
-   grid-area: 1 / 1 / 4 / 3;
+   grid-area: 2 / 1 / 4 / 3;
 }
 
 .right {
    grid-area: 1 / 3 / 4 / 6;
+}
+
+.right, .left{
+    padding: 20px;
 }
 
 .land {
@@ -224,6 +246,7 @@ main {
    font-size: 1rem;
 }
 
+
 footer {
    clear: both;
    background-color: darkgray;
@@ -233,24 +256,47 @@ footer {
 }
 
 @media (max-width: 920px) {
-   .wrapper {
-      width: 100%;
+   .wrapper, header, .right, .left, .aboutme, .skills, .education{
+        margin: 0;
+        margin-top: 1vw;
+        width: 100%;
    }
-}
 
-@media print {
-   .wrapper {
-      font-family: serif;
-   }
-   aside {
-      display: none;
-   }
-   nav {
-      display: none;
-   }
-   p {
-      font-size: 12pt;
-   }
+    .skills-image {
+        display: flex;
+        justify-content: space-around;
+    }
+
+   .buttons {
+        padding: 1vw;
+        width: 100%;
+        display: flex; 
+        margin-top: 1vw;
+        justify-content: space-between;
+    }
+
+    .aboutme-content {
+        width: 50vw;
+    }
+
+    .aboutme-yap p {
+        width: auto;
+        height: 100%;
+    }
+
+  .buttons button {
+        width: 30%;
+    }  
+
+   main {
+        display: block;
+    } 
+
+    .skills-image img {
+        width: 13vw;
+        height: 13vw;
+
+    }
 }
 
 * {

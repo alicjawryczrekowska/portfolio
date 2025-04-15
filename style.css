@@ -1,5 +1,8 @@
-span, p, h4, button {
-    overflow: hidden;
+span,
+p,
+h4,
+button {
+   overflow: hidden;
 }
 
 body {
@@ -136,9 +139,9 @@ button {
    font-size: 1.2rem;
    padding-top: 0.5rem;
    padding-bottom: 0.5rem;
-   padding-left: 1rem;
-   padding-right: 1rem;
-
+   padding-left: 2rem;
+   padding-right: 2rem;
+   margin: 0.3rem;
    border-style: outset;
    border-width: 6px;
    border-color: #f45ec7; /* Optional: matches text color */
@@ -193,8 +196,6 @@ button:active {
    box-sizing: border-box;
 }
 
-
-
 .educationrubrik {
    color: #eb0faa;
    font-size: 1.6rem;
@@ -218,13 +219,12 @@ main {
 }
 
 .buttons {
-    padding: 20px;
-    display: flex;
-    margin-top: 1vw;
-    justify-content: space-between;
-    grid-area: 1 / 1 / 1 / 2;
+   padding: 20px;
+   display: flex;
+   margin-top: 1vw;
+   justify-content: space-between;
+   grid-area: 1 / 1 / 1 / 2;
 }
-
 
 .left {
    grid-area: 2 / 1 / 4 / 3;
@@ -234,10 +234,44 @@ main {
    grid-area: 1 / 3 / 4 / 6;
 }
 
-.right, .left{
-    padding: 20px;
+.right,
+.left {
+   padding: 20px;
 }
 
+buttonsgallery {
+   font-family: W95FA;
+   background-color: #eb0faa;
+   color: #fffbde;
+   font-size: 1.2rem;
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   padding-left: 2rem;
+   padding-right: 2rem;
+   margin: 0.3rem;
+   border-style: outset;
+   border-width: 6px;
+   border-color: #f45ec7; /* Optional: matches text color */
+}
+
+/* Hover: when you hover the mouse */
+buttonsgallery:hover {
+   background-color: #d6179d;
+   color: #fffbe0;
+}
+
+/* Active: when you click and hold */
+buttonsgallery:active {
+   background-color: #9b0a70;
+   color: #ffe7f8;
+   border-style: inset; /* optional: makes it look pressed */
+}
+
+.button-wrapper {
+   display: flex;
+   justify-content: center; /* center horizontally */
+   height: 10vh; /* full height of viewport */
+}
 .land {
    font-style: italic;
    background-color: #fffbde;
@@ -245,7 +279,6 @@ main {
    color: black;
    font-size: 1rem;
 }
-
 
 footer {
    clear: both;
@@ -256,51 +289,91 @@ footer {
 }
 
 @media (max-width: 920px) {
-   .wrapper, header, .right, .left, .aboutme, .skills, .education{
-        margin: 0;
-        margin-top: 1vw;
-        width: 100%;
+   .wrapper,
+   header,
+   .right,
+   .left,
+   .aboutme,
+   .skills,
+   .education {
+      margin: 0;
+      margin-top: 1vw;
+      width: 100%;
    }
 
-    .skills-image {
-        display: flex;
-        justify-content: space-around;
-    }
+   .skills-image {
+      display: flex;
+      justify-content: space-around;
+   }
 
    .buttons {
-        padding: 1vw;
-        width: 100%;
-        display: flex; 
-        margin-top: 1vw;
-        justify-content: space-between;
-    }
+      padding: 1vw;
+      width: 100%;
+      display: flex;
+      margin-top: 1vw;
+      justify-content: space-between;
+   }
 
-    .aboutme-content {
-        width: 50vw;
-    }
+   .aboutme-content {
+      width: 50vw;
+   }
 
-    .aboutme-yap p {
-        width: auto;
-        height: 100%;
-    }
+   .aboutme-yap p {
+      width: auto;
+      height: 100%;
+   }
 
-  .buttons button {
-        width: 30%;
-    }  
+   .buttons button {
+      width: 30%;
+   }
 
    main {
-        display: block;
-    } 
+      display: block;
+   }
 
-    .skills-image img {
-        width: 13vw;
-        height: 13vw;
-
-    }
+   .skills-image img {
+      width: 13vw;
+      height: 13vw;
+   }
 }
 
 * {
    box-sizing: border-box;
+}
+
+.row {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+   flex: 25%;
+   max-width: 25%;
+   padding: 0 4px;
+}
+
+.column img {
+   margin-top: 8px;
+   vertical-align: middle;
+   width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+   .column {
+      flex: 50%;
+      max-width: 50%;
+   }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+   .column {
+      flex: 100%;
+      max-width: 100%;
+   }
 }
 
 @font-face {
